@@ -5,8 +5,8 @@ cards = [2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A]
 
 host_hand = random.sample(cards, 2)
 my_hand = random.sample(cards, 2)
-print("Elin:", my_hand)
-print("PC eli:", host_hand[0], "_")
+print("Your deck:", my_hand)
+print("PC deck:", host_hand[0], "_")
 
 my_sum = my_hand[0] + my_hand[1]
 host_sum = host_hand[0] + host_hand[1]
@@ -38,21 +38,21 @@ def blackjack():
 while True:
 
 
-    choice = input("Kart çekmek için 'k', devam etmek için 'd' (çıkmak için 'q'): ")
+    choice = input("To take a card press 'k',to continue  'd' (to exit 'q'): ")
     host_hand = random.sample(cards, 2)
     my_hand = random.sample(cards, 2)
-    print("Elin:", my_hand)
-    print("PC eli:", host_hand[0], "_")
+    print("Your deck", my_hand)
+    print("PC deck:", host_hand[0], "_")
 
     if choice == "k":
         add_card()
-        print("Elin:", my_hand)
+        print("Your hand:", my_hand)
     elif choice == "d":
         while host_sum < 17:
             new_card = random.choice(cards)
             host_hand.append(new_card)
             host_sum += new_card
-        print("PC eli:", host_hand)
+        print("PC deck:", host_hand)
         blackjack()
     elif choice == "q":
         break
